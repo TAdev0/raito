@@ -181,17 +181,6 @@ fn validate_bits(block: @Block, target: u256) -> Result<(), ByteArray> {
     }
 }
 
-// fn fee_and_merkle_root(block: @Block) -> Result<(u256, u256), ByteArray> {
-//     let mut txids = ArrayTrait::new();
-//     let mut total_fee = 0;
-
-//     for tx in *block.txs {
-//         txids.append(tx.txid());
-//         total_fee += tx.fee();
-//     };
-
-//     Result::Ok((total_fee, merkle_root(ref txids)))
-// }
 fn fee_and_merkle_root(block: @Block) -> Result<(u256, Hash), ByteArray> {
     let mut txids: Array<Hash> = ArrayTrait::new();
     let mut total_fee = 0;
