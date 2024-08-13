@@ -1,6 +1,6 @@
 use super::merkle_tree::merkle_root;
 use super::utils::{shl, shr, Hash};
-use super::state::{Block, ChainState, Transaction, UtreexoState};
+use super::state::{Block, ChainState, Transaction, UtreexoState, UtreexoSet, TxIn, TxOut};
 
 const MAX_TARGET: u256 = 0x00000000FFFF0000000000000000000000000000000000000000000000000000;
 
