@@ -23,6 +23,7 @@ pub fn merkle_root(ref hashes: Array<Hash>) -> Hash {
 
     merkle_root(ref next_hashes)
 }
+
 #[cfg(test)]
 mod tests {
     use super::{merkle_root};
@@ -397,4 +398,3 @@ mod tests {
         assert_eq!(merkle_root(ref txids), expected_merkle_root);
     }
 }
-
