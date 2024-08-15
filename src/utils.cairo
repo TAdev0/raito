@@ -237,3 +237,20 @@ pub fn from_base16(hexs: ByteArray) -> @ByteArray {
 
     @result
 }
+
+pub fn from_string_to_hexa(hexs: ByteArray) -> @ByteArray {
+    let mut result: ByteArray = Default::default();
+    let mut i = 0;
+    let len = hexs.len();
+    assert_eq!(len % 2, 0);
+
+    while i < len {
+        let test1 = hexs.at(i).unwrap();
+        let test2 = hexs.at(i + 1).unwrap();
+        let byte = shl(hex_to_byte(test1), 4_u32) | hex_to_byte(test2);
+        result.append_word(byte.into(), 1);
+        i += 2;
+    };
+
+    @result
+}
